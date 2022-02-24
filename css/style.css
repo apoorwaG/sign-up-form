@@ -1,0 +1,51 @@
+body {
+    height: 100vh;
+    display: flex;
+    margin: 0;
+}
+
+.header,
+.content {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    /* set the portion of the screen covered by header */
+    flex: 0.2 1 auto;
+    /* width: 40%; */
+    background-image: url("../images/matthew-jungling-unsplash.jpg");
+    /* background-image: url("../images/bernd-dittrich-unsplash.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    /* width: 60%; */
+    flex: 0.8 1 auto;
+    --left-padding: 2vw;
+}
+
+
+.logoSection {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.315);
+    margin-top: 20vh;
+    padding-top: min(2vh, 30px);
+    padding-bottom: min(2vh, 30px);
+    text-align: center;
+}
+
+p {
+    /* set paragraph width to anything between 45 and 75 characters */
+    /* min: smaller size between 45ch and (almost the entire viewport)) */
+    /* max: 75 characters */
+    width: clamp(min(100% - 1rem, 45ch), 50%, 75ch);
+    padding-left: var(--left-padding);
+}
+
+.italic {
+    font-style: italic;
+}
