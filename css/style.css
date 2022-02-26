@@ -1,3 +1,7 @@
+:root {
+    font-size: 10px;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -13,8 +17,7 @@ body {
 
 .header {
     /* set the portion of the screen covered by header */
-    flex: 0.2 1 auto;
-    /* width: 40%; */
+    flex: 0.3 1 0;
     background-image: url("../images/matthew-jungling-unsplash.jpg");
     /* background-image: url("../images/bernd-dittrich-unsplash.jpg"); */
     background-repeat: no-repeat;
@@ -22,9 +25,8 @@ body {
 }
 
 .content {
-    /* width: 60%; */
-    flex: 0.8 1 auto;
-    --left-padding: 2vw;
+    flex: 0.7 1 0;
+    --left-padding: 2rem;
 }
 
 
@@ -38,14 +40,50 @@ body {
     text-align: center;
 }
 
+.intro {
+    flex: 0.2 1 0;
+}
+
+.form {
+    flex: 0.8 1 0;
+}
+
+.intro,
+.form {
+    border: 2px solid red;
+}
+
 p {
-    /* set paragraph width to anything between 45 and 75 characters */
-    /* min: smaller size between 45ch and (almost the entire viewport)) */
-    /* max: 75 characters */
-    width: clamp(min(100% - 1rem, 45ch), 50%, 75ch);
+    /* set paragraph width to anything between 45 and 75 characters
+    min: smaller size between 45ch and (almost the entire viewport))
+    max: 75 characters */
+    width: clamp(45ch, 50%, 75ch);
     padding-left: var(--left-padding);
+    font-size: min(2.5rem, 1.5vw);
 }
 
 .italic {
     font-style: italic;
+}
+
+form > * {
+    padding-left: var(--left-padding);
+}
+
+
+input {
+    font-family: inherit;
+    font-size: 100%;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+}
+
+.item {
+    margin-bottom: 1vh;
 }
