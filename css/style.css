@@ -1,16 +1,18 @@
 :root {
     font-size: 10px;
+    font-family: sans-serif;
 }
 
 body {
     height: 100vh;
     display: flex;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 .header,
 .content {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
 }
@@ -26,12 +28,13 @@ body {
 
 .content {
     flex: 0.7 1 0;
-    --left-padding: 2rem;
+    --left-padding: 2vw;
 }
 
 
 .logoSection {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    /* font-size: clamp(1.5rem, 5vw, 3rem); */
+    font-size: clamp(2vw, 4rem, 4vw);
     color: white;
     background-color: rgba(0, 0, 0, 0.315);
     margin-top: 20vh;
@@ -50,7 +53,7 @@ body {
 
 .intro,
 .form {
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 p {
@@ -59,7 +62,8 @@ p {
     max: 75 characters */
     width: clamp(45ch, 50%, 75ch);
     padding-left: var(--left-padding);
-    font-size: min(2.5rem, 1.5vw);
+    /* font-size: min(2.5rem, 1.5vw); */
+    font-size: clamp(1.2vw, 2.5rem, 1.7vw);
 }
 
 .italic {
@@ -70,20 +74,36 @@ form > * {
     padding-left: var(--left-padding);
 }
 
+.items {
+    display: flex;
+    flex-direction: column;
+    row-gap: min(2vh, 2rem);
+}
 
 input {
     font-family: inherit;
-    font-size: 100%;
-    width: 200px;
+    /* font-size: 100%; */
+    font-size: clamp(1.2vw, 2.5rem, 1.7vw);
+    width: min(20vw, 30rem);
+    height: min(20px, 5vh);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-label {
-    display: block;
+    border-radius: 3%;
 }
 
 .item {
     margin-bottom: 1vh;
+}
+
+div.items .row {
+    display: flex;
+    gap: min(4vw, 20px);
+}
+
+label {
+    display: block;
+    font-size: min(0.8vw, 2rem);
+    letter-spacing: 0.2em;
+    color:rgb(87, 87, 87);
 }
