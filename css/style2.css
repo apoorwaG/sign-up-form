@@ -1,0 +1,41 @@
+:root {
+    font-family: serif;
+    font-size: 12px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+body > * {
+    border: 2px solid black;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/matthew-jungling-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.header .logoSection {
+    padding: 15px 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 14vh;
+}
+
+.header .image_credits {
+    margin-top: auto;
+    padding: min(10px, 1vh);
+}
+
+
+
+
