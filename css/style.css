@@ -1,109 +1,141 @@
 :root {
-    font-size: 10px;
-    font-family: sans-serif;
+    font-family: serif;
+    font-size: 12px;
 }
 
 body {
     height: 100vh;
+    width: 100vw;
     display: flex;
-    margin: 0;
     flex-wrap: wrap;
+    margin: 0;
 }
 
-.header,
-.content {
-    /* border: 2px solid black; */
-    display: flex;
-    flex-direction: column;
+body > * {
+    border: 2px solid black;
 }
 
 .header {
-    /* set the portion of the screen covered by header */
-    flex: 0.3 1 0;
+    
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     background-image: url("../images/matthew-jungling-unsplash.jpg");
-    /* background-image: url("../images/bernd-dittrich-unsplash.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.content {
-    flex: 0.7 1 0;
-    --left-padding: 2vw;
-}
-
-
-.logoSection {
-    /* font-size: clamp(1.5rem, 5vw, 3rem); */
-    font-size: clamp(2vw, 4rem, 4vw);
     color: white;
-    background-color: rgba(0, 0, 0, 0.315);
-    margin-top: 20vh;
-    padding-top: min(2vh, 30px);
-    padding-bottom: min(2vh, 30px);
+    flex: 3 1 0;
+}
+
+.header .logoSection {
+    padding: 15px 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 14vh;
+    font-size: clamp(20px, 4rem, 2.2vw);
+}
+
+.header .image_credits {
+    margin-top: auto;
+    padding: min(10px, 1vh);
+    font-size: min(1vw, 8px);
     text-align: center;
 }
 
-.intro {
-    flex: 0.2 1 0;
+.content {
+    flex: 7 2 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.form {
-    flex: 0.8 1 0;
+.content p {
+    font-size: 2rem;
+    max-width: 60vw;
 }
 
-.intro,
-.form {
-    /* border: 2px solid red; */
-}
-
-p {
-    /* set paragraph width to anything between 45 and 75 characters
-    min: smaller size between 45ch and (almost the entire viewport))
-    max: 75 characters */
-    width: clamp(45ch, 50%, 75ch);
-    padding-left: var(--left-padding);
-    /* font-size: min(2.5rem, 1.5vw); */
-    font-size: clamp(1.2vw, 2.5rem, 1.7vw);
-}
-
-.italic {
+.content .italic {
     font-style: italic;
 }
 
-form > * {
-    padding-left: var(--left-padding);
+.content > p,
+.form p,
+.fields .row,
+.fields + .button {
+    margin-left: min(3vw, 30px);
 }
 
-.items {
+.fields {
+    /* background-color: rgb(219, 198, 139); */
+    background-color: white;
+    padding-bottom: 1vh;
+    padding-top: 2vh;
+    box-shadow: 0px 5px 10px lightgray;
+}
+
+form .row {
     display: flex;
-    flex-direction: column;
-    row-gap: min(2vh, 2rem);
+    flex-wrap: wrap;
+    column-gap: max(2vw, 2rem);
+    row-gap: min(2vw, 2rem);
+    margin-bottom: min(2vw, 2rem);
+}
+
+.row .item label {
+    display: block;
+    color: rgb(68, 68, 68);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.2rem;
 }
 
 input {
-    font-family: inherit;
-    /* font-size: 100%; */
-    font-size: clamp(1.2vw, 2.5rem, 1.7vw);
-    width: min(20vw, 30rem);
-    height: min(20px, 5vh);
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border-radius: 3%;
+    border: 2px solid #d4d5d8;
+    max-width: 70vw;
 }
 
-.item {
-    margin-bottom: 1vh;
+input:focus {
+    border: 1px solid blue;
+    box-shadow: 0px 3px 3px gray;
 }
 
-div.items .row {
-    display: flex;
-    gap: min(4vw, 20px);
+.passwordMessage {
+    color: red;
 }
 
-label {
-    display: block;
-    font-size: min(0.8vw, 2rem);
-    letter-spacing: 0.2em;
-    color:rgb(87, 87, 87);
+form button {
+    margin-top: 4vh;
+    background-color: rgb(240, 153, 104);
+    padding: 10px 30px;
+    color: white;
+    font-size: 2rem;
+    border-radius: 3px;
+    border-style: none;
+    max-width: 70vw;
+    font-size: clamp(1vw,2rem,2.5rem);
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: rgb(185, 120, 82);
+    transform: scale(1.1);
+}
+
+form button:active {
+    /* transform: translateY(4px); */
+    transform: scale(1);
+}
+
+.content > p:last-child {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: rgb(240, 153, 104);
+}
+
+.login-link a:hover {
+    color: rgb(185, 120, 82);
 }
