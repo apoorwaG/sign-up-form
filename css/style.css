@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Coffee';
+    src: url('../fonts/coffee_house-webfont.woff'),
+         url('../fonts/coffee_house-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     font-family: serif;
     font-size: 12px;
@@ -11,9 +19,9 @@ body {
     margin: 0;
 }
 
-body > * {
+/* body > * {
     border: 2px solid black;
-}
+} */
 
 .header {
     
@@ -30,9 +38,20 @@ body > * {
 .header .logoSection {
     padding: 15px 5px;
     background-color: rgba(0, 0, 0, 0.2);
-    text-align: center;
+    /* text-align: center; */
     margin-top: 14vh;
-    font-size: clamp(20px, 4rem, 2.2vw);
+    font-family: Coffee;
+    font-size: clamp(25px, 5rem, 4vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: min(2vw, 10px);
+    row-gap: min(2vh, 10px);
+}
+
+.header .logoSection img {
+    height: auto;
+    width: min(10vh, 80px);
 }
 
 .header .image_credits {
@@ -106,7 +125,7 @@ input:focus {
 form button {
     margin-top: 4vh;
     background-color: rgb(240, 153, 104);
-    padding: 10px 30px;
+    padding: 10px min(30px, 5vw);
     color: white;
     font-size: 2rem;
     border-radius: 3px;
